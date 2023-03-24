@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     private bool isGrounded;
+    public int score;
     
     void Update()
     {
@@ -52,5 +53,12 @@ public class PlayerController : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void AddScore (int amount)
+    {   
+        score += amount;
+        Debug.Log("Score: "+ score);
+        // Update score text UI.
     }
 }
