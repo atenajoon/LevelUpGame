@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private bool isGrounded;
     public int score;
-    
+    public TextMeshProUGUI scoreText;
+
     void Update()
     {
         //moving the player with arrow keys
@@ -58,7 +60,6 @@ public class PlayerController : MonoBehaviour
     public void AddScore (int amount)
     {   
         score += amount;
-        Debug.Log("Score: "+ score);
-        // Update score text UI.
+        scoreText.text = "Score: " + score.ToString();
     }
 }
