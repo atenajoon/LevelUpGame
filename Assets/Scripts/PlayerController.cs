@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void Burn()
+    {
+        Debug.Log("Burned");
+    }
+
     public void AddScore (int amount)
     {   
         score += amount;
