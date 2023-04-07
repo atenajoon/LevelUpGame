@@ -1604,7 +1604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 768797333273060215, guid: c6ca945c3efc345dc87d0fcfdd025dbe, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5902429075163848761, guid: c6ca945c3efc345dc87d0fcfdd025dbe, type: 3}
       propertyPath: spark
