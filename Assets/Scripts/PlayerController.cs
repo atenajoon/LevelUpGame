@@ -12,10 +12,13 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     public int score;
     public TextMeshProUGUI scoreText;
+    public int health;
+    public TextMeshProUGUI healthText;
+    
 
     void Update()
     {
-        //moving the player with arrow keys
+        // moving the player with arrow keys
         float x = Input.GetAxisRaw("Horizontal") * moveSpeed;
         float z = Input.GetAxisRaw("Vertical")* moveSpeed;
 
@@ -52,21 +55,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // restarts the current scene
     public void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    // reduces the health
     public void Burn()
     {
-        SubtractScore(1);
+        SubtractHealth(1);
     }
 
-    public void SubtractScore (int amount)
-    {   
-        score -= amount;
-        scoreText.text = "Score: " + score.ToString();
+    public void SubtractHealth (int amount)
+    {
+        if (health > 0)
+        {
+            health -= amount;
+            healthText.text = "Health: " + health.ToString();
+        }
+        else
+            GameOver();
     }
+
+    // adds to the player's score
     public void AddScore (int amount)
     {   
         score += amount;
