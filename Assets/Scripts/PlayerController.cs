@@ -59,9 +59,14 @@ public class PlayerController : MonoBehaviour
 
     public void Burn()
     {
-        Debug.Log("Burned");
+        SubtractScore(1);
     }
 
+    public void SubtractScore (int amount)
+    {   
+        score -= amount;
+        scoreText.text = "Score: " + score.ToString();
+    }
     public void AddScore (int amount)
     {   
         score += amount;
