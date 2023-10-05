@@ -81,6 +81,9 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 5
   score: 0
+  scoreText: {fileID: 0}
+  health: 3
+  healthText: {fileID: 0}
 --- !u!1001 &6758745970216586250
 PrefabInstance:
   m_ObjectHideFlags: 0
