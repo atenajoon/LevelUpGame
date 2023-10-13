@@ -15,11 +15,11 @@ public class LavaGround : MonoBehaviour
     {
         
     }
-        private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.CompareTag("Player"))
+        if(collision.collider.CompareTag("Player"))
         {
-            other.GetComponent<PlayerController>().GameOver();
+            collision.collider.GetComponent<PlayerController>().GameOver();
         }
     }
 }
