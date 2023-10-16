@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &116533002 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 768797333273060215, guid: c6ca945c3efc345dc87d0fcfdd025dbe, type: 3}
+  m_PrefabInstance: {fileID: 569106084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &203234462 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 768797333273060215, guid: c6ca945c3efc345dc87d0fcfdd025dbe, type: 3}
@@ -335,6 +340,10 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.4254042
       objectReference: {fileID: 0}
+    - target: {fileID: 5902429075163848761, guid: c6ca945c3efc345dc87d0fcfdd025dbe, type: 3}
+      propertyPath: spark
+      value: 
+      objectReference: {fileID: 116533002}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6ca945c3efc345dc87d0fcfdd025dbe, type: 3}
 --- !u!1001 &691768632
