@@ -3,7 +3,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    private float timeDuration = 1f * 60f;
+    private float timeDuration = 1f * 6f;
     private float timer;
     [SerializeField] private TextMeshProUGUI firstMinute;
     [SerializeField] private TextMeshProUGUI secondMinute;
@@ -46,6 +46,10 @@ public class Timer : MonoBehaviour
     }
 
     private void Flash() {
+        if(timer != 0) {
+            timer = 0;
+            UpdateTimerDisplay(timer);
 
+        }
     }
 }
