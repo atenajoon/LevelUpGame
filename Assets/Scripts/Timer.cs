@@ -3,7 +3,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    private float timeDuration = 3f * 60f;
+    private float timeDuration = 1f * 60f;
     private float timer;
     [SerializeField] private TextMeshProUGUI firstMinute;
     [SerializeField] private TextMeshProUGUI secondMinute;
@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-
+        ResetTimer();
     }
 
 
@@ -41,8 +41,8 @@ public class Timer : MonoBehaviour
 
         firstMinute.text = currentTime[0].ToString();
         secondMinute.text = currentTime[1].ToString();
-        firstSecond.text = currentTime[2].ToString();
-        secondSecond.text = currentTime[3].ToString();
+        firstSecond.text = currentTime[3].ToString();
+        secondSecond.text = currentTime[4].ToString();
     }
 
     private void Flash() {
