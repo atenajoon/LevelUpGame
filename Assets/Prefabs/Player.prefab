@@ -80,7 +80,7 @@ MonoBehaviour:
   rig: {fileID: 6758745971577667281}
   moveSpeed: 3
   jumpForce: 5
-  score: 0
+  score: 20
   scoreText: {fileID: 0}
   health: 3
   healthText: {fileID: 0}

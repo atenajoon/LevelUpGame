@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     private bool isGrounded;
-    public int score;
-    public TextMeshProUGUI scoreText;
+    [SerializeField] public int coins;
+    public TextMeshProUGUI coinsText;
     public int health;
     public TextMeshProUGUI healthText;
     
@@ -78,10 +78,10 @@ public class PlayerController : MonoBehaviour
             GameOver();
     }
 
-    // adds to the player's score
-    public void AddScore (int amount)
+    // adds to the player's coins
+    public void TotalCoins (int amount)
     {   
-        score += amount;
-        scoreText.text = "Score: " + score.ToString();
+        coins -= amount;
+        coinsText.text = "Coins: " + coins.ToString();
     }
 }
