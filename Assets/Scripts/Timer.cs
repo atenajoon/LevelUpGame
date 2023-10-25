@@ -1,18 +1,21 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    private float timeDuration = 1f * 7f;
+    private float timeDuration = 1f * 5f;
     private float timer;
+    private float flashTimer;
+    private float flashLength = 1f;
+    private float flasher;
+    private float flashDuration = 5f;
     [SerializeField] private TextMeshProUGUI firstMinute;
     [SerializeField] private TextMeshProUGUI secondMinute;
     [SerializeField] private TextMeshProUGUI separator;
     [SerializeField] private TextMeshProUGUI firstSecond;
     [SerializeField] private TextMeshProUGUI secondSecond;
     [SerializeField] private TextMeshProUGUI gameOverText;
-    private float flashTimer;
-    private float flashDuration = 1f;
 
     void Start()
     {
@@ -20,19 +23,22 @@ public class Timer : MonoBehaviour
         gameOverText.enabled = false;
     }
 
-
     void Update()
     {
         if(timer > 0) {
             timer -= Time.deltaTime;
             UpdateTimerDisplay(timer);
-        } else {
-            Flash();
-        }
+        } 
+        else Flash();
+
+        if(flasher < 0) SceneManager.LoadScene(0);
     }
 
     private void ResetTimer() {
         timer = timeDuration;
+    }
+    private void ResetFlasher() {
+        flasher = flashDuration;
     }
     private void UpdateTimerDisplay(float time) {
         float minutes = Mathf.FloorToInt(time / 60);
@@ -50,18 +56,25 @@ public class Timer : MonoBehaviour
         if(timer != 0) {
             timer = 0;
             UpdateTimerDisplay(timer);
-        }
-
-        if(flashTimer <= 0) {
-            flashTimer = flashDuration;
-        } else if (flashTimer >= flashDuration / 2) {
-            flashTimer -= Time.deltaTime;
-            SetTextDisplay(false);
-        } else {
-            flashTimer -= Time.deltaTime;
-            SetTextDisplay(true);
+            ResetFlasher();        
         }
         
+        if (flashTimer <= 0)
+        {
+            flashTimer = flashLength;
+        }
+        else if (flashTimer >= flashLength / 2)
+        {
+            flasher -= Time.deltaTime;
+            flashTimer -= Time.deltaTime;
+            SetTextDisplay(false);
+        }
+        else
+        {
+            flasher -= Time.deltaTime;
+            flashTimer -= Time.deltaTime;
+            SetTextDisplay(true);
+        }        
     }
 
     private void SetTextDisplay(bool enabled) {
