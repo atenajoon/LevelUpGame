@@ -3,20 +3,21 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    private float timeDuration = 1f * 60f;
+    private float timeDuration = 1f * 7f;
     private float timer;
     [SerializeField] private TextMeshProUGUI firstMinute;
     [SerializeField] private TextMeshProUGUI secondMinute;
     [SerializeField] private TextMeshProUGUI separator;
     [SerializeField] private TextMeshProUGUI firstSecond;
     [SerializeField] private TextMeshProUGUI secondSecond;
-
+    [SerializeField] private TextMeshProUGUI gameOverText;
     private float flashTimer;
     private float flashDuration = 1f;
 
     void Start()
     {
         ResetTimer();
+        gameOverText.enabled = false;
     }
 
 
@@ -60,6 +61,7 @@ public class Timer : MonoBehaviour
             flashTimer -= Time.deltaTime;
             SetTextDisplay(true);
         }
+        
     }
 
     private void SetTextDisplay(bool enabled) {
@@ -68,5 +70,6 @@ public class Timer : MonoBehaviour
         separator.enabled = enabled;
         firstSecond.enabled = enabled;
         secondSecond.enabled = enabled;
+        gameOverText.enabled = enabled;
     }
 }
