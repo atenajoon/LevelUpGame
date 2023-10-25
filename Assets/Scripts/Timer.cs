@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+    private PlayerController playerController;
     private float timeDuration = 1f * 5f;
     private float timer;
     private float flashTimer;
@@ -21,6 +22,7 @@ public class Timer : MonoBehaviour
     {
         ResetTimer();
         gameOverText.enabled = false;
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
 
     void Update()
@@ -54,9 +56,10 @@ public class Timer : MonoBehaviour
 
     private void Flash() {
         if(timer != 0) {
+            playerController.moveSpeed = 0;
             timer = 0;
             UpdateTimerDisplay(timer);
-            ResetFlasher();        
+            ResetFlasher();
         }
         
         if (flashTimer <= 0)
