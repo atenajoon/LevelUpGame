@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     private PlayerController playerController;
-    private float timeDuration = 1f * 5f;
+    private float timeDuration = 1f * 60f;
     private float timer;
     private float flashTimer;
     private float flashLength = 1f;
@@ -48,8 +48,8 @@ public class Timer : MonoBehaviour
 
         string currentTime = string.Format("{00:00} {1:00}", minutes, seconds);
 
-        firstMinute.text = currentTime[0].ToString();
-        secondMinute.text = currentTime[1].ToString();
+        //firstMinute.text = currentTime[0].ToString();
+        //secondMinute.text = currentTime[1].ToString();
         firstSecond.text = currentTime[3].ToString();
         secondSecond.text = currentTime[4].ToString();
     }
