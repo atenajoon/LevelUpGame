@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerController>().AddScore(1);
+            other.GetComponent<PlayerController>().TotalCoins(1);
             Destroy(gameObject);
         }
     }
