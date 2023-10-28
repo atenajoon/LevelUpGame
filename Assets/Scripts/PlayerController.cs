@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private bool isGrounded;
     [SerializeField] public int coins;
+    [SerializeField] public string message;
     public TextMeshProUGUI coinsText;
     public int health;
     public TextMeshProUGUI healthText;
@@ -44,6 +45,8 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
+        // display it on the Leaderboard
+        Debug.Log("message: " + message);
     }
 
     // condition to check if the player has touched the ground

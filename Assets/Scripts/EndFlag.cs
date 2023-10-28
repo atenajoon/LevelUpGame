@@ -7,18 +7,35 @@ public class EndFlag : MonoBehaviour
 {
     public string nextSceneName;
     public bool lastLevel;
+    private int leftCoins;
+    private PlayerController playerController;
+
     private void OnTriggerEnter (Collider other)
     {
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+
+        leftCoins = playerController.coins;
         if(other.CompareTag("Player"))
         {
-            if(lastLevel == true)
+            if (leftCoins == 0)
             {
-                SceneManager.LoadScene(0); //the first scene in the list, which is usually the "Menu" scene
+                LoadNextScene();
             }
             else
             {
-                SceneManager.LoadScene(nextSceneName);
+                playerController.message = "You are missing " + leftCoins + " coins to collect!";
             }
+        }
+    }
+
+    private void LoadNextScene() {
+        if(lastLevel == true)
+        {
+            SceneManager.LoadScene(0); //the first scene in the list, which is usually the "Menu" scene
+        }
+        else
+        {
+            SceneManager.LoadScene(nextSceneName);
         }
     }
 }
