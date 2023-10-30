@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     private PlayerController playerController;
-    private float timeDuration = 1f * 60f;
+    private float timeDuration = 1f * 40f;
     private float timer;
     private float flashTimer;
     private float flashLength = 1f;
@@ -17,11 +17,13 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI firstSecond;
     [SerializeField] private TextMeshProUGUI secondSecond;
     [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private TextMeshProUGUI coinsAlertText;
 
     void Start()
     {
         ResetTimer();
         gameOverText.enabled = false;
+        coinsAlertText.enabled = false;
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
 

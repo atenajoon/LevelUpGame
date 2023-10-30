@@ -23,7 +23,8 @@ public class EndFlag : MonoBehaviour
             }
             else
             {
-                playerController.message = "You are missing " + leftCoins + " coins to collect!";
+                playerController.messageText = "You are missing " + leftCoins + " coins to collect!";
+                Debug.Log(playerController.messageText);
             }
         }
     }
