@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/1-Start-Menu.unity
     guid: 21768a7bd2b61491f9bf1094b580637c
   - enabled: 1
+    path: Assets/Scenes/4-Win-Menu.unity
+    guid: fbd70a7e125b54b5ba69f8474f0d2e27
+  - enabled: 1
     path: Assets/Scenes/2-Sea-Level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/3-Hell-Level.unity
     guid: 68092f914bd7a4a8b8ec39ab1a77ff06
-  - enabled: 1
-    path: Assets/Scenes/4-Win-Menu.unity
-    guid: fbd70a7e125b54b5ba69f8474f0d2e27
   m_configObjects: {}

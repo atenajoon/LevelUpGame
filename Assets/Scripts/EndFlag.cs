@@ -57,7 +57,7 @@ public class EndFlag : MonoBehaviour
     private void LoadNextScene() {
         if(lastLevel == true)
         {
-            SceneManager.LoadScene(0); //the first scene in the list, which is usually the "Win Menu" scene
+            SceneManager.LoadScene(1); //the second scene in the list, which is supposed to be the "Win-Menu" scene
         }
         else
         {
