@@ -57,6 +57,7 @@ public class Timer : MonoBehaviour
     private void Flash() {
         if(timer != 0) {
             playerController.moveSpeed = 0;
+            playerController.jumpForce = 0;
             timer = 0;
             UpdateTimerDisplay(timer);
             ResetFlasher();
