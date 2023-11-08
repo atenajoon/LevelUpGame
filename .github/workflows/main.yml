@@ -15,10 +15,6 @@ jobs:
           path: Library
           key: Library-WebGL
           restore-keys: Library-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Build-WebGL
-          path: build/WebGL
       - uses: game-ci/unity-builder@v3
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -26,3 +22,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Build-WebGL
+          path: build/WebGL
