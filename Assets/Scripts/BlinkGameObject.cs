@@ -7,40 +7,20 @@ public class BlinkGameObject : MonoBehaviour
     public GameObject targetBlinkObject;
     public float blinkRepeatTime = 1f;
     public float blinkInitialPause = 1f;
-    public bool startBlink;
 
-    // Start is called before the first frame update
-    void Start()
+
+    public void CallStartBlinkGameObject()
     {
-        startBlink = false;
-        // if (startBlink == true) CallChangeStateOfGameObject();
-    }
-    void CallChangeStateOfGameObject()
-    {
-        InvokeRepeating("ChangeStateOfGameObject", 0f , blinkRepeatTime);   
+        InvokeRepeating("StartBlinkGameObject", 0f , blinkRepeatTime);   
     }
 
-    void ChangeStateOfGameObject()
+    void StartBlinkGameObject()
     {
         targetBlinkObject.SetActive(!targetBlinkObject.activeInHierarchy);
     }
-    void PauseChangeStateOfGameObject()
+    public void StopBlinkGameObject()
     {
+        CancelInvoke();
         targetBlinkObject.SetActive(true);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (startBlink == true)
-        {
-
-            // Debug.Log("Start Blink");
-            CallChangeStateOfGameObject();
-            startBlink = false;
-        }
-        else 
-        {
-            PauseChangeStateOfGameObject();
-        }
     }
 }
