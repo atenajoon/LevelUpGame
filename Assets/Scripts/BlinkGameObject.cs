@@ -5,11 +5,12 @@ using UnityEngine;
 public class BlinkGameObject : MonoBehaviour
 {
     public GameObject targetBlinkObject;
+    public float blinkRepeatTime = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        ChangeStateOfGameObject();
+        InvokeRepeating("ChangeStateOfGameObject", 0f , blinkRepeatTime);
     }
 
     void ChangeStateOfGameObject()
