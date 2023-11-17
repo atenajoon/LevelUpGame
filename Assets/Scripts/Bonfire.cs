@@ -22,6 +22,8 @@ public class Bonfire : MonoBehaviour
             StartCoroutine (stopSmoke());
 
             other.GetComponent<PlayerController>().Burn();
+            // Debug.Log(other.GetComponent<BlinkGameObject>());
+            other.GetComponent<BlinkGameObject>().startBlink = true;
         }
     }
     
