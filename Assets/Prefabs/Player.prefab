@@ -81,7 +81,6 @@ MonoBehaviour:
   moveSpeed: 4
   jumpForce: 6
   coins: 0
-  messageText: 
   coinsText: {fileID: 0}
   health: 3
   healthText: {fileID: 0}

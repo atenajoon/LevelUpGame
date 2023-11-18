@@ -61,12 +61,6 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    // reduces the health
-    public void Burn()
-    {
-        SubtractHealth(1);
-    }
-
     public void SubtractHealth (int amount)
     {
         if (health > 0)
