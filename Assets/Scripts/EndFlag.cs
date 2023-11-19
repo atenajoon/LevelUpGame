@@ -20,26 +20,28 @@ public class EndFlag : MonoBehaviour
     [SerializeField] private TextMeshProUGUI flashCoinsText;
 
     void Start() {
-        flashCoinsText.enabled = false;
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        flashCoinsText.transform.localScale = new Vector3(0, 0, 0);
         coinsFlashOn = false;
     }
     void Update() {
+        leftCoins = playerController.coins;
+        flashCoinsText.text = "Coins: " + leftCoins;
+        
         if (coinsFlashOn == true) {
             Flash();
             timer += Time.deltaTime;
 
             if (timer >= flashInterval) {
                 coinsFlashOn = false;
-                flashCoinsText.enabled = false;
+                flashCoinsText.transform.localScale = new Vector3(0, 0, 0);
                 timer = 0.0f;
             }
         }
     }
     private void OnTriggerEnter (Collider other)
     {
-        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-
-        leftCoins = playerController.coins;
+        
         if(other.CompareTag("Player"))
         {
             if (leftCoins == 0) // if all coins are collected load the next scene
@@ -49,7 +51,7 @@ public class EndFlag : MonoBehaviour
             else // if not, flash the coins' text
             {
                 coinsFlashOn = true;
-                flashCoinsText.text = "Coins: " + leftCoins;
+                
             }
         }
     }
@@ -80,19 +82,15 @@ public class EndFlag : MonoBehaviour
         {
             flasher -= Time.deltaTime;
             flashCoins -= Time.deltaTime;
-            SetTextDisplay(false);
+
+            flashCoinsText.transform.localScale = new Vector3(0,0,0);
         }
         else
         {
             flasher -= Time.deltaTime;
             flashCoins -= Time.deltaTime;
-            SetTextDisplay(true);
+
+            flashCoinsText.transform.localScale = new Vector3(1, 1, 1);
         }       
     }
-
-    private void SetTextDisplay(bool enabled) {
-        flashCoinsText.enabled = enabled;
-    }
-
-
 }
