@@ -23,6 +23,6 @@ public class BlinkGameObject : MonoBehaviour
     public void StopBlinkGameObject()
     {
         CancelInvoke();
-        targetBlinkObject.SetActive(true);
+        targetBlinkObject.transform.localScale = new Vector3(1, 1, 1);
     }
 }
