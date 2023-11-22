@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioPlay : MonoBehaviour
+public class AudioPlayer : MonoBehaviour
 {
     private AudioSource audioSource;
     public AudioClip audioClip;
@@ -22,16 +22,16 @@ public class AudioPlay : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PlayAudio();
-        }
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Space))
+    //     {
+    //         PlayAudio();
+    //     }
         
-    }
+    // }
 
-        void PlayAudio()
+    public void PlayAudio()
     {
         if (enabled && audioSource != null && !audioSource.isPlaying)
         {

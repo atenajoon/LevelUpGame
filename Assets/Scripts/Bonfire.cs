@@ -57,6 +57,7 @@ public class Bonfire : MonoBehaviour
 
                     isImmune = true;
                     isTimerRunning = true;
+                    blinkGameObject.GetComponent<AudioPlayer>().PlayAudio();
                     blinkGameObject.GetComponent<PlayerController>().SubtractHealth(1);
                     blinkGameObject.GetComponent<BlinkGameObject>().CallStartBlinkGameObject();
                 }
