@@ -21,16 +21,6 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Space))
-    //     {
-    //         PlayAudio();
-    //     }
-        
-    // }
-
     public void PlayAudio()
     {
         if (enabled && audioSource != null && !audioSource.isPlaying)
