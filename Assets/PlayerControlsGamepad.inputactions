@@ -1,0 +1,34 @@
+{
+    "name": "PlayerControllerJoystick",
+    "maps": [
+        {
+            "name": "GamePlay",
+            "id": "212bdafd-64fe-42cb-8824-4a16df6174e2",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "6b8ba78c-f1d7-4c9f-ad3a-11954601027d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "396be30d-ccdf-4b94-a4e1-724d6dbe0617",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

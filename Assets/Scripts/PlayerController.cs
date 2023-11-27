@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    PlayerControlsGamepad controls;
     public Rigidbody rig;
     public float moveSpeed;
     public float jumpForce;
@@ -15,6 +17,25 @@ public class PlayerController : MonoBehaviour
     public int health;
     public TextMeshProUGUI healthText;
     
+    void awake()
+    {
+        controls = new PlayerControlsGamepad();
+        controls.GamePlay.Jump.performed += ctx => PlayerJumps();
+    }
+    void OnEnable()
+    {
+        controls.GamePlay.Enable();
+    }
+    void OnDisable()
+    {
+        controls.GamePlay.Disable();
+    }
+
+    private void PlayerJumps()
+    {
+        isGrounded = false;
+        rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
 
     void Update()
     {
@@ -36,8 +57,7 @@ public class PlayerController : MonoBehaviour
         // player jumps with the space key (only if it's back on the ground)
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            isGrounded = false;
-            rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            PlayerJumps();
         }
 
         if(transform.position.y <= -5)
