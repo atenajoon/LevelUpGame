@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     private float flashTimer;
     private float flashLength = 1f;
     private float flasher;
-    private float flashDuration = 1f;
+    private float flashDuration = 5f;
     [SerializeField] private TextMeshProUGUI firstMinute;
     [SerializeField] private TextMeshProUGUI secondMinute;
     [SerializeField] private TextMeshProUGUI separator;
@@ -61,16 +61,6 @@ public class Timer : MonoBehaviour
             timer = 0;
             UpdateTimerDisplay(timer);
             ResetFlasher();
-        }
-
-        if(flashTimer <= 0) {
-            flashTimer = flashDuration;
-        } else if (flashTimer >= flashDuration / 2) {
-            flashTimer -= Time.deltaTime;
-            SetTextDisplay(false);
-        } else {
-            flashTimer -= Time.deltaTime;
-            SetTextDisplay(true);
         }
         
         if (flashTimer <= 0)
