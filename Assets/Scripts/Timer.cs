@@ -89,12 +89,4 @@ public class Timer : MonoBehaviour
         secondSecond.enabled = enabled;
         gameOverText.enabled = enabled;
     }
-
-    private void SetTextDisplay(bool enabled) {
-        firstMinute.enabled = enabled;
-        secondMinute.enabled = enabled;
-        separator.enabled = enabled;
-        firstSecond.enabled = enabled;
-        secondSecond.enabled = enabled;
-    }
 }
