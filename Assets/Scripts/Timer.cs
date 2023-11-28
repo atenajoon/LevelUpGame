@@ -4,28 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-<<<<<<< Updated upstream
     private PlayerController playerController;
-=======
->>>>>>> Stashed changes
     private float timeDuration = 1f * 60f;
     private float timer;
     private float flashTimer;
     private float flashLength = 1f;
     private float flasher;
-    private float flashDuration = 5f;
+    private float flashDuration = 3f;
     [SerializeField] private TextMeshProUGUI firstMinute;
     [SerializeField] private TextMeshProUGUI secondMinute;
     [SerializeField] private TextMeshProUGUI separator;
     [SerializeField] private TextMeshProUGUI firstSecond;
     [SerializeField] private TextMeshProUGUI secondSecond;
-<<<<<<< Updated upstream
     [SerializeField] private TextMeshProUGUI gameOverText;
-=======
-
-    private float flashTimer;
-    private float flashDuration = 1f;
->>>>>>> Stashed changes
 
     void Start()
     {
@@ -69,20 +60,7 @@ public class Timer : MonoBehaviour
             playerController.jumpForce = 0;
             timer = 0;
             UpdateTimerDisplay(timer);
-<<<<<<< Updated upstream
             ResetFlasher();
-=======
-        }
-
-        if(flashTimer <= 0) {
-            flashTimer = flashDuration;
-        } else if (flashTimer >= flashDuration / 2) {
-            flashTimer -= Time.deltaTime;
-            SetTextDisplay(false);
-        } else {
-            flashTimer -= Time.deltaTime;
-            SetTextDisplay(true);
->>>>>>> Stashed changes
         }
         
         if (flashTimer <= 0)
