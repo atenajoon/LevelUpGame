@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TextManager : MonoBehaviour
+public class TextWobbleManager : MonoBehaviour
 {
 
     TMP_Text textMesh;
@@ -24,6 +24,19 @@ public class TextManager : MonoBehaviour
         mesh = textMesh.mesh;
         vertices = mesh.vertices;
 
+        for(int i = 0; i < textMesh.textInfo.characterCount; i++)
+        {
+            TMP_CharacterInfo c = textMesh.textInfo.characterInfo[i];
+
+            int index = c.vertexIndex;
+
+            Vector3 offset = Wobble(Time.time + i);
+            vertices[index] += offset;
+            vertices[index + 1] += offset;
+            vertices[index + 2] += offset;
+            vertices[index + 3] += offset;
+        }
+        
         for(int i = 0; i < vertices.Length; i++)
         {
             Vector3 offset = Wobble(Time.time + i);
