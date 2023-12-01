@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     private PlayerController playerController;
-    private float timeDuration = 1f * 3f;
+    private float timeDuration = 1f * 60f;
     private float timer;
     private float flashTimer;
     private float flashLength = 1f;
     private float flasher;
-    private float flashDuration = 7f;
+    private float flashDuration = 5f;
     [SerializeField] private TextMeshProUGUI firstMinute;
     [SerializeField] private TextMeshProUGUI secondMinute;
     [SerializeField] private TextMeshProUGUI separator;
@@ -88,6 +88,5 @@ public class Timer : MonoBehaviour
         separator.enabled = enabled;
         firstSecond.enabled = enabled;
         secondSecond.enabled = enabled;
-        // gameOverText.enabled = enabled;
     }
 }
