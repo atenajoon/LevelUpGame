@@ -2,13 +2,13 @@
 This is a 3D game, made on Unity with the intention of ongoing project-based learning. 
 This release has only two levels. The next release will be on a separate branch with more sophisticated levels.
 
+Play it [here](https://atenajoon.itch.io/levelup).
 ## Getting Started
 
 To run this project locally, follow these steps:
 
 1. Clone this repository.
 2. Open the project in Unity (version 2021.3.20f1).
-3. ...
 
 ## Installation
 Make sure you have Unity installed. Download the project assets and follow these steps:
